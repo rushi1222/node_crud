@@ -11,10 +11,14 @@
                 <a href="/add-user" class="border-shadow">
                     <span class="text-gradient">New User <i class="fas fa-user"></i></span>
                 </a>
-                <a>
+                <!-- <a>
                     <input type="text" placeholder="search" type = "submit">
                     <button>Search</button>
-                </a>
+                </a> -->
+                <form class="form-inline my-2 my-lg-0" action="/search" method="get">    
+                    <input class="form-control mr-sm-2" type="text" name="dsearch" placeholder="Search">    
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>    
+                  </form>  
             </div>
 
             <!-- form handling -->
