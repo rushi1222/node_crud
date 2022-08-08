@@ -159,3 +159,21 @@ exports.delete = (req, res)=>{
         });
 }
 
+
+
+exports.search = (req, res) => {
+    try {
+        const searchData = req.query.dsearch;
+        Userdb.find({$or:[{name:{'$regex':req.query.dsearch}},{email:{'$regex':req.query.dsearch}}]},(err,data)=>{  
+            if(err){  
+            console.log(err);  
+            }else{  
+            res.render('index',{users:data});  
+            }  
+            })  
+    } catch (error) {
+        res.status(500).send({
+            message: "something went wrong."
+        });
+    }
+}
